@@ -1,0 +1,43 @@
+body{
+	background-color: white;
+	background-image: url('../images/rome-background.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: center;
+}
+
+.header,
+.score{
+	font: 300 32px/32px "Open Sans", Helvetica, sans-serif;
+	color: DarkGrey;
+	margin: 10px;
+	padding: 5px;
+}
+
+.container{
+  margin: 0 auto;
+  margin-top: 100px;
+  width:600px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px; 
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
+ul{
+	text-align: left;
+	width: 200px;
+	margin: 0 auto;
+}
+
+li{
+	margin: 15px;
+}
+
+input[type='radio'] {
+	height: 20px;
+	width: 20px;
+	margin:5px 5px;
+}
