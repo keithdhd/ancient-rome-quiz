@@ -41,7 +41,7 @@ function createNewQuestionHTML( _questionText, _arrAnswers, _correctAnswer){
 
 		answersHtmlString += "</ul>";
 
-		var theAnswerButton = new Button("Submit Answer","#587DB4", markAnswer(_correctAnswer) ).init();
+		var theAnswerButton = new Button("Submit Answer","#587DB4", function(){markAnswer( _correctAnswer ) }).init();
 
 		answersHtmlString += theAnswerButton.outerHTML + "</div>";
 		theAccordion.append(answersHtmlString);
@@ -51,7 +51,7 @@ function markAnswer(_correctAnswer){
 	alert(_correctAnswer);
 }
 
-function Button(_text, _color, _onclick){
+function Button(_text, _color, _onclick, _correctAnswer){
 
 	this.EL = document.createElement("button");
 
