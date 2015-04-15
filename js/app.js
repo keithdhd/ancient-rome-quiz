@@ -41,29 +41,36 @@ function createNewQuestionHTML( _questionText, _arrAnswers, _correctAnswer){
 
 		answersHtmlString += "</ul>";
 
-		var theAnswerButton = new Button("Submit Answer","#587DB4", function(){markAnswer( _correctAnswer ) }).init();
+		var theAnswerButton = new Button("Submit Answer","#587DB4", _correctAnswer).init();
 
 		answersHtmlString += theAnswerButton.outerHTML + "</div>";
 		theAccordion.append(answersHtmlString);
 }
 
-function markAnswer(_correctAnswer){
-	alert(_correctAnswer);
+function markAnswer(){
+	alert(this.correctAnswer);
 }
 
-function Button(_text, _color, _onclick, _correctAnswer){
+function Button(_text, _color, _correctAnswer){
 
 	this.EL = document.createElement("button");
 
 	this.color = _color || "#FFA500";
 	this.text = _text || "Master Button";
 	this.clickable = true;
+	this.correctAnswer = _correctAnswer;
 
-	this.onclick = _onclick || markAnswer;
+	//this.EL.onclick = function(){markAnswer(_correctAnswer)};
+
+
 
 	this.init = function(){
 		t = document.createTextNode(this.text);
 		this.EL.appendChild(t);
+
+		this.EL.addEventListener("click", function() {
+	    	markAnswer(this.correctAnswer);
+		});
 
 		this.EL.style.backgroundColor = this.color;
 		this.EL.style.color = 'white';
@@ -74,8 +81,6 @@ function Button(_text, _color, _onclick, _correctAnswer){
 	    this.EL.style.borderRadius = '10px';
 	    this.EL.style.fontSize = '14px';
 	    this.EL.style.outline = 0;
-
-	    this.EL.onclick = this.onclick;
 
 	   return this.EL;
 	}
