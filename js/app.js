@@ -41,11 +41,7 @@ function Question(_questionText, _arrAnswers, _correctAnswer){
 
 function createNewQuestionHTML( _questionText, _arrAnswers, _correctAnswer){
 	
-		var answersHtmlString = "<h3>" + _questionText + "</h3>";
-
-		var questionHeader = document.createElement("h3");
-		questionHeader.innerHTML = _questionText;
-		theAccordion.append(questionHeader);
+		theAccordion.append("<h3>" + _questionText + "</h3>");
 
 		var questionDiv = document.createElement("div");
 		questionDiv.id = "questionDiv" + numberOfQuestions;
